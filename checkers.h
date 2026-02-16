@@ -4,7 +4,9 @@
 
 #define NUM_ROWS 8
 #define NUM_COLUMNS 8
+#define NUM_TILES 64
 #define TILE_DIMENSION 135
+#define NUM_PIECES 12
 
 using namespace std;
 
@@ -29,7 +31,7 @@ class tile
     // Behavior
     void Draw_Tile() 
     {
-        std::cout << "Tile: " << std::to_string(tile_id) << " x: " << to_string(tile_x) << " y: " << to_string(tile_y) << "\n";
+        // std::cout << "Tile: " << std::to_string(tile_id) << " x: " << to_string(tile_x) << " y: " << to_string(tile_y) << "\n";
         DrawRectangle(tile_x, tile_y, tile_width, tile_height, tile_color); // Draw shape itself
         DrawRectangleLines(tile_x, tile_y, 135, 135, BLACK); // Draw outile
     }
@@ -76,5 +78,6 @@ class piece
     }
 };
 
-void Init_Board_Data(tile[][NUM_COLUMNS], int, int);
-void Draw_Board(tile [][NUM_COLUMNS], int, int);
+void Init_Board_Data(tile[], int, int);
+void Draw_Board(tile [], int, int);
+void Init_Pieces_Data(piece*, piece*, int);
