@@ -24,7 +24,7 @@ class tile
     float tile_y = 0;
     float tile_width = 135;
     float tile_height = 135;
-    Color tile_color = WHITE;
+    Color tile_color = {245, 236, 220, 255};
     bool tile_playable = false;
     Rectangle tile_dimensions = {tile_x, tile_y, tile_width, tile_height};
 
@@ -49,7 +49,7 @@ class piece
     int piece_x = 0;
     int piece_y = 0;
     Color piece_color;
-    Color piece_lineColor;
+    Color piece_line_color;
     int piece_radius = 30;
 
     // Behavior
@@ -71,13 +71,14 @@ class piece
     {
 
     // Draw outlines of the piece
-    DrawCircleLines(piece_x, piece_y, 05, piece_lineColor);
-    DrawCircleLines(piece_x, piece_y, 15, piece_lineColor);
-    DrawCircleLines(piece_x, piece_y, 30, piece_lineColor);
+    DrawCircleLines(piece_x, piece_y, 05, piece_line_color);
+    DrawCircleLines(piece_x, piece_y, 15, piece_line_color);
+    DrawCircleLines(piece_x, piece_y, 30, piece_line_color);
     }
     }
 };
 
 void Init_Board_Data(tile[], int, int);
-void Draw_Board(tile [], int, int);
-void Init_Pieces_Data(piece*, piece*, int);
+void Draw_Board(tile[], int, int);
+void Init_Pieces_Data(piece*, piece*, int, tile[]);
+void Draw_Pieces(piece*, piece*);
